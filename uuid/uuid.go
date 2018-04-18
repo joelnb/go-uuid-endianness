@@ -21,7 +21,7 @@ type Uuid struct {
 
 // String implements the fmt.Stringer interface
 func (u Uuid) String() string {
-	return fmt.Sprintf("%x-%x-%x-%x%x-%x", u.TimeLow, u.TimeMid, u.TimeHiAndVersion, u.ClockSeqHiAndRes, u.ClockSeqLow, u.Node)
+	return fmt.Sprintf("%08x-%04x-%04x-%02x%02x-%012x", u.TimeLow, u.TimeMid, u.TimeHiAndVersion, u.ClockSeqHiAndRes, u.ClockSeqLow, u.Node)
 }
 
 // ToMiddleEndian encodes the UUID into a middle-endian UUID.
